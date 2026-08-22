@@ -12,7 +12,7 @@ function HowWorks() {
             One card unlocks<br />every experience
           </div>
           <div style={{ color: '#6b7d82', fontSize: '15px', lineHeight: 1.6, marginTop: '14px', maxWidth: '460px' }}>
-            Pay ₹5,00,000 once and get unlimited access to villas, theme parks, water parks, resorts & dine-out. Just tap your card — no bills, no limits — for you, family & friends for 365 days.
+            Universal Realty Farm &amp; Resort (OPC) Pvt. Ltd. — pay ₹5,00,000 once and tap to enjoy villas, farms, theme parks, water parks, resorts &amp; dine-out. No bills, no limits — for you, family &amp; friends for 365 days.
           </div>
           <a href="#contact" style={{ display: 'inline-flex', alignItems: 'center', background: '#0e2328', color: '#fba13a', fontSize: '14px', fontWeight: 700, padding: '12px 24px', borderRadius: '9999px', textDecoration: 'none', marginTop: '20px', letterSpacing: '0.02em', border: '1px solid #0e2328' }}>
             Get Your Card

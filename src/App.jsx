@@ -7,15 +7,39 @@ import Combine from './components/Combine'
 import Destinations from './components/Destinations'
 import HowWorks from './components/HowWorks'
 import Practitioners from './components/Practitioners'
+import Career from './components/Career'
 import Footer from './components/Footer'
 import NoticeBanner from './components/NoticeBanner'
 
 import { useEffect } from 'react'
 import Lenis from 'lenis'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
+function HomePage() {
+  return (
+    <main>
+      <Hero />
+      <Statistics />
+      <About />
+      <FeaturedRetreats />
+      <Combine />
+      <Destinations />
+      <HowWorks />
+      <Practitioners />
+    </main>
+  )
+}
+
+function CareerPage() {
+  return (
+    <main style={{ paddingTop: '95px' }}>
+      <Career />
+    </main>
+  )
+}
 
 function App() {
   useEffect(() => {
-    // Lenis fluid smooth scroll
     const lenis = new Lenis({
       duration: 1.15,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -30,16 +54,16 @@ function App() {
     }
     rafId = requestAnimationFrame(raf)
 
-    // reveal animations - exclude Hero to avoid stuck
-    const els = document.querySelectorAll('main section:not(:first-child), footer')
+    const els = document.querySelectorAll('main section, footer')
+    const hero = document.querySelector('main section:first-child')
     els.forEach((el, i) => {
+      if (el === hero) return
       el.classList.add('reveal')
       if (i % 3 === 1) el.classList.add('reveal-delay-1')
       if (i % 3 === 2) el.classList.add('reveal-delay-2')
     })
-    // Hero visible immediately
-    const hero = document.querySelector('main section:first-child')
     if (hero) hero.classList.add('visible')
+    const toObserve = Array.from(els).filter((el) => el !== hero)
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
@@ -51,14 +75,13 @@ function App() {
       },
       { threshold: 0.12, rootMargin: '0px 0px -60px 0px' }
     )
-    els.forEach((el) => io.observe(el))
+    toObserve.forEach((el) => io.observe(el))
 
-    // smooth anchor with lenis + header offset 95
     const handler = (e) => {
       const a = e.target.closest('a[href^="#"]')
       if (!a) return
       const id = a.getAttribute('href')
-      if (!id || id === '#') return
+      if (!id || id === '#' || id.startsWith('/')) return
       const target = document.querySelector(id)
       if (!target) return
       e.preventDefault()
@@ -74,21 +97,17 @@ function App() {
   }, [])
 
   return (
-    <div id="top" className="min-h-screen bg-light">
-      <Header />
-      <main>
-        <Hero />
-        <Statistics />
-        <About />
-        <FeaturedRetreats />
-        <Combine />
-        <Destinations />
-        <HowWorks />
-        <Practitioners />
-      </main>
-      <Footer />
-      <NoticeBanner />
-    </div>
+    <BrowserRouter>
+      <div id="top" className="min-h-screen bg-light">
+        <Header />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/career" element={<CareerPage />} />
+        </Routes>
+        <Footer />
+        <NoticeBanner />
+      </div>
+    </BrowserRouter>
   )
 }
 

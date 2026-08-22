@@ -13,8 +13,8 @@ function Hero() {
         <h2 style={{ color: '#fff', fontWeight: 600, lineHeight: 1, letterSpacing: '-0.02em', fontSize: 'clamp(28px, 5vw, 56px)', textAlign: 'center', marginTop: '8px' }}>
           Unlimited Experiences
         </h2>
-        <p style={{ color: 'rgba(255,255,255,0.9)', fontSize: 'clamp(14px, 2vw, 18px)', lineHeight: 1.5, textAlign: 'center', marginTop: '16px', maxWidth: '560px' }}>
-          ₹5,00,000 for 1 year. Tap at villas, theme parks, water parks, resorts & dine-out — just tap & enjoy.
+        <p style={{ color: 'rgba(255,255,255,0.9)', fontSize: 'clamp(13px, 1.8vw, 16px)', lineHeight: 1.5, textAlign: 'center', marginTop: '16px', maxWidth: '620px' }}>
+          Universal Realty Farm &amp; Resort (OPC) Pvt. Ltd. — ₹5,00,000 for 1 year. Tap your card at villas, farms, theme parks, water parks, resorts &amp; dine-out — no bills, unlimited for family &amp; friends.
         </p>
         <a href="#experiences" style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', background: '#fff', color: '#0e2328', fontSize: '14px', fontWeight: 600, padding: '14px 28px', borderRadius: '9999px', textDecoration: 'none', marginTop: '24px', whiteSpace: 'nowrap' }}>
           Explore Retreats

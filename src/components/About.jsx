@@ -10,9 +10,10 @@ function About() {
           <span style={{ color: '#8a9ba0', fontSize: '14px', lineHeight: '20px' }}>✳</span>
           <span style={{ color: '#5a6d73', fontSize: '14px', fontWeight: 500, letterSpacing: '0.02em' }}>About Us</span>
         </div>
-        <div style={{ color: '#0e2328', fontSize: 'clamp(36px, 5vw, 56px)', fontWeight: 600, lineHeight: 1.05, letterSpacing: '-0.02em' }}>
-          Not just trips experiences that <br />
-          nurture body and soul
+        <div style={{ color: '#0e2328', fontSize: 'clamp(32px, 5vw, 48px)', fontWeight: 600, lineHeight: 1.05, letterSpacing: '-0.02em' }}>
+          Universal Realty Farm &amp; Resort<br />
+          (OPC) Pvt. Ltd. — Farms, Resorts<br />
+          &amp; Nature-led Escapes
         </div>
       </div>
 
@@ -33,30 +34,32 @@ function About() {
           {/* Top paragraph - centered block */}
           <div style={{ maxWidth: '460px', margin: '0 auto', textAlign: 'left' }}>
             <div style={{ color: '#1a2e33', fontSize: '15px', lineHeight: 1.6, fontWeight: 400 }}>
-              Vita Travel is a premium wellness travel marketplace
+              Universal Realty Farm &amp; Resort (OPC) Pvt. Ltd.
               <br />
-              that blends the ease of booking with the feel of an editorial
+              is a farm &amp; resort-led hospitality company blending
               <br />
-              magazine. Discover curated programs, match them with
+              nature, wellness and leisure. We curate villas, farms,
               <br />
-              exceptional stays, and book seamlessly.
+              resorts &amp; adventure venues — now accessible with
+              <br />
+              one tap-enabled membership card.
             </div>
           </div>
 
           {/* Stats */}
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '40px', marginTop: '56px', maxWidth: '460px', marginLeft: 'auto', marginRight: 'auto', width: '100%' }}>
             <div>
-              <div style={{ color: '#0e2328', fontSize: '42px', fontWeight: 700, lineHeight: 1, letterSpacing: '-0.02em' }}>100+</div>
+              <div style={{ color: '#0e2328', fontSize: '42px', fontWeight: 700, lineHeight: 1, letterSpacing: '-0.02em' }}>500+</div>
               <div style={{ color: '#1a2e33', fontSize: '14px', fontWeight: 600, marginTop: '14px', lineHeight: 1.3 }}>
-                Total countries <br />
-                travelled
+                Partner venues <br />
+                across India
               </div>
             </div>
             <div>
-              <div style={{ color: '#0e2328', fontSize: '42px', fontWeight: 700, lineHeight: 1, letterSpacing: '-0.02em' }}>1 472+</div>
+              <div style={{ color: '#0e2328', fontSize: '42px', fontWeight: 700, lineHeight: 1, letterSpacing: '-0.02em' }}>365</div>
               <div style={{ color: '#1a2e33', fontSize: '14px', fontWeight: 600, marginTop: '14px', lineHeight: 1.3 }}>
-                Total retreats <br />
-                attended
+                Days tap &amp; enjoy <br />
+                with one card
               </div>
             </div>
           </div>
@@ -64,7 +67,7 @@ function About() {
           {/* Trusted + logos */}
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginTop: '80px', gap: '24px', maxWidth: '460px', marginLeft: 'auto', marginRight: 'auto', width: '100%' }}>
             <div style={{ color: '#6b7d82', fontSize: '13px', lineHeight: 1.5, maxWidth: '200px' }}>
-              Trusted by travelers looking for more than ordinary vacations.
+              Trusted by families who choose Universal Realty for farm, resort &amp; leisure escapes.
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '32px' }}>
               <span style={{ color: '#0e2328', fontSize: '13px', fontWeight: 600, fontFamily: 'serif', letterSpacing: '0.02em' }}>yoga<span style={{ fontSize: '9px', verticalAlign: 'super' }}>journal</span></span>

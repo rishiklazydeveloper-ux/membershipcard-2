@@ -11,6 +11,7 @@ import image7 from '../assets/image7.PNG'
 import image8 from '../assets/image8.PNG'
 import image9 from '../assets/image9.PNG'
 import image10 from '../assets/image10.PNG'
+import card from '../assets/card.png'
 import logoImg from '../assets/logo.jpeg'
 
 export const IMAGES = {
@@ -29,7 +30,7 @@ export const IMAGES = {
   statistic3: image3,
 
   // About
-  aboutIllustration: image4,
+  aboutIllustration: card,
   aboutLogo1: logoImg,
   aboutLogo2: logoImg,
   aboutLogo3: logoImg,
@@ -78,20 +79,17 @@ export const IMAGES = {
 
 export const STATISTICS = [
   {
-    title: 'Introvert Retreats',
-    countries: '/ 78+ Countries',
+    title: 'Raw-House',
     image: IMAGES.statistic1,
     hasRightBorder: true,
   },
   {
-    title: 'Yoga Retreats',
-    countries: '/ 89+ Countries',
+    title: 'Night Out',
     image: IMAGES.statistic2,
     hasRightBorder: true,
   },
   {
-    title: 'Detox',
-    countries: '/ 56+ Countries',
+    title: 'Park',
     image: IMAGES.statistic3,
     hasRightBorder: false,
   },
