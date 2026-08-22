@@ -203,40 +203,41 @@ function Career() {
             <div style={{ color: '#0e2328', fontSize: '20px', fontWeight: 700, lineHeight: 1.2 }}>Enquire for Career</div>
             <div style={{ color: '#6b7d82', fontSize: '12px', marginTop: '6px' }}>Universal Realty Farm & Resort (OPC) Pvt. Ltd. — 650 openings</div>
             <form onSubmit={onSubmit} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '14px', marginTop: '20px' }}>
+              <style>{`#career input::placeholder, #career textarea::placeholder { color: #8a9ba0; opacity: 1; } #career select:invalid { color: #8a9ba0; }`}</style>
               <div>
-                <label style={{ display: 'block', color: '#0e2328', fontSize: '12px', fontWeight: 600, marginBottom: '6px' }}>Name *</label>
-                <input name="name" value={form.name} onChange={onChange} required placeholder="Enter name" style={{ width: '100%', background: '#fff', border: '1px solid #dde3e5', borderRadius: '4px', padding: '10px 12px', fontSize: '13px', outline: 'none', boxSizing: 'border-box' }} />
+                <label style={{ display: 'block', color: '#0e2328', fontSize: '12px', fontWeight: 700, marginBottom: '6px' }}>Name *</label>
+                <input name="name" value={form.name} onChange={onChange} required placeholder="Enter name" style={{ width: '100%', background: '#ffffff', border: '1.5px solid #0e2328', borderRadius: '4px', padding: '10px 12px', fontSize: '13px', color: '#0e2328', outline: 'none', boxSizing: 'border-box' }} />
               </div>
               <div>
-                <label style={{ display: 'block', color: '#0e2328', fontSize: '12px', fontWeight: 600, marginBottom: '6px' }}>Mobile Number *</label>
-                <input name="mobile" value={form.mobile} onChange={onChange} required type="tel" placeholder="Enter mobile" style={{ width: '100%', background: '#fff', border: '1px solid #dde3e5', borderRadius: '4px', padding: '10px 12px', fontSize: '13px', outline: 'none', boxSizing: 'border-box' }} />
+                <label style={{ display: 'block', color: '#0e2328', fontSize: '12px', fontWeight: 700, marginBottom: '6px' }}>Mobile Number *</label>
+                <input name="mobile" value={form.mobile} onChange={onChange} required type="tel" placeholder="Enter mobile" style={{ width: '100%', background: '#ffffff', border: '1.5px solid #0e2328', borderRadius: '4px', padding: '10px 12px', fontSize: '13px', color: '#0e2328', outline: 'none', boxSizing: 'border-box' }} />
               </div>
               <div>
-                <label style={{ display: 'block', color: '#0e2328', fontSize: '12px', fontWeight: 600, marginBottom: '6px' }}>Gender *</label>
-                <select name="gender" value={form.gender} onChange={onChange} required style={{ width: '100%', background: '#fff', border: '1px solid #dde3e5', borderRadius: '4px', padding: '10px 12px', fontSize: '13px', outline: 'none', boxSizing: 'border-box' }}>
+                <label style={{ display: 'block', color: '#0e2328', fontSize: '12px', fontWeight: 700, marginBottom: '6px' }}>Gender *</label>
+                <select name="gender" value={form.gender} onChange={onChange} required style={{ width: '100%', background: '#ffffff', border: '1.5px solid #0e2328', borderRadius: '4px', padding: '10px 12px', fontSize: '13px', color: form.gender ? '#0e2328' : '#8a9ba0', outline: 'none', boxSizing: 'border-box' }}>
                   <option value="">Select gender</option>
                   <option>Male</option><option>Female</option><option>Other</option><option>Prefer not to say</option>
                 </select>
               </div>
               <div>
-                <label style={{ display: 'block', color: '#0e2328', fontSize: '12px', fontWeight: 600, marginBottom: '6px' }}>Email Address *</label>
-                <input name="email" value={form.email} onChange={onChange} required type="email" placeholder="Enter email" style={{ width: '100%', background: '#fff', border: '1px solid #dde3e5', borderRadius: '4px', padding: '10px 12px', fontSize: '13px', outline: 'none', boxSizing: 'border-box' }} />
+                <label style={{ display: 'block', color: '#0e2328', fontSize: '12px', fontWeight: 700, marginBottom: '6px' }}>Email Address *</label>
+                <input name="email" value={form.email} onChange={onChange} required type="email" placeholder="Enter email" style={{ width: '100%', background: '#ffffff', border: '1.5px solid #0e2328', borderRadius: '4px', padding: '10px 12px', fontSize: '13px', color: '#0e2328', outline: 'none', boxSizing: 'border-box' }} />
               </div>
               <div style={{ gridColumn: 'span 2' }}>
-                <label style={{ display: 'block', color: '#0e2328', fontSize: '12px', fontWeight: 600, marginBottom: '6px' }}>Qualification *</label>
-                <select name="qualification" value={form.qualification} onChange={onChange} required style={{ width: '100%', background: '#fff', border: '1px solid #dde3e5', borderRadius: '4px', padding: '10px 12px', fontSize: '13px', outline: 'none', boxSizing: 'border-box' }}>
+                <label style={{ display: 'block', color: '#0e2328', fontSize: '12px', fontWeight: 700, marginBottom: '6px' }}>Qualification *</label>
+                <select name="qualification" value={form.qualification} onChange={onChange} required style={{ width: '100%', background: '#ffffff', border: '1.5px solid #0e2328', borderRadius: '4px', padding: '10px 12px', fontSize: '13px', color: form.qualification ? '#0e2328' : '#8a9ba0', outline: 'none', boxSizing: 'border-box' }}>
                   <option value="">Select qualification</option>
                   <option>12th Pass</option><option>Graduate</option><option>Post Graduate</option><option>MBA</option><option>Other</option>
                 </select>
               </div>
               <div style={{ gridColumn: 'span 2' }}>
-                <label style={{ display: 'block', color: '#0e2328', fontSize: '12px', fontWeight: 600, marginBottom: '6px' }}>Summary</label>
-                <textarea name="summary" value={form.summary} onChange={onChange} rows={3} placeholder="Brief about yourself / experience" style={{ width: '100%', background: '#fff', border: '1px solid #dde3e5', borderRadius: '4px', padding: '10px 12px', fontSize: '13px', outline: 'none', resize: 'none', boxSizing: 'border-box' }} />
+                <label style={{ display: 'block', color: '#0e2328', fontSize: '12px', fontWeight: 700, marginBottom: '6px' }}>Summary</label>
+                <textarea name="summary" value={form.summary} onChange={onChange} rows={3} placeholder="Brief about yourself / experience" style={{ width: '100%', background: '#ffffff', border: '1.5px solid #0e2328', borderRadius: '4px', padding: '10px 12px', fontSize: '13px', color: '#0e2328', outline: 'none', resize: 'none', boxSizing: 'border-box' }} />
               </div>
               <div style={{ gridColumn: 'span 2' }}>
-                <label style={{ display: 'block', color: '#0e2328', fontSize: '12px', fontWeight: 600, marginBottom: '6px' }}>Resume Upload *</label>
-                <input name="resume" onChange={onChange} required type="file" accept=".pdf,.doc,.docx" style={{ width: '100%', background: '#fff', border: '1px solid #dde3e5', borderRadius: '4px', padding: '9px 10px', fontSize: '12px', outline: 'none', boxSizing: 'border-box' }} />
-                <div style={{ color: '#8a9ba0', fontSize: '10px', marginTop: '6px' }}>PDF, DOC, DOCX — max 5MB</div>
+                <label style={{ display: 'block', color: '#0e2328', fontSize: '12px', fontWeight: 700, marginBottom: '6px' }}>Resume Upload *</label>
+                <input name="resume" onChange={onChange} required type="file" accept=".pdf,.doc,.docx" style={{ width: '100%', background: '#ffffff', border: '1.5px solid #0e2328', borderRadius: '4px', padding: '9px 10px', fontSize: '12px', color: '#0e2328', outline: 'none', boxSizing: 'border-box' }} />
+                <div style={{ color: '#5a6d73', fontSize: '10px', marginTop: '6px', fontWeight: 600 }}>PDF, DOC, DOCX — max 5MB</div>
               </div>
               {status && <div style={{ gridColumn: 'span 2', fontSize: '12px', padding: '10px 12px', borderRadius: '4px', background: status.type === 'success' ? '#e6f4ea' : '#fde8e8', color: status.type === 'success' ? '#137333' : '#a50e0e', border: `1px solid ${status.type === 'success' ? '#b7e1c3' : '#f5c2c2'}` }}>{status.msg}</div>}
               <div style={{ gridColumn: 'span 2', display: 'flex', gap: '10px', marginTop: '6px' }}>
