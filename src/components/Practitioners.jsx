@@ -33,7 +33,7 @@ function Practitioners() {
 
   return (
     <section id="contact" style={{ background: '#ffffff', padding: '80px 40px 80px' }}>
-      <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 480px', gap: '60px', alignItems: 'start' }}>
+      <div className="contact-grid" style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 480px', gap: '60px', alignItems: 'center' }}>
         <div style={{ paddingTop: '12px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px' }}>
             <span style={{ color: '#8a9ba0', fontSize: '14px', lineHeight: 1 }}>✳</span>
@@ -47,20 +47,20 @@ function Practitioners() {
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginTop: '48px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-              <span style={{ width: '32px', height: '32px', background: '#f3f5f5', border: '1px solid #eef2f3', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '13px' }}>✉</span>
-              <span style={{ color: '#0e2328', fontSize: '14px', fontWeight: 500 }}>info@universalrealtyfarmandresort.com</span>
+              <span style={{ width: '32px', height: '32px', background: '#f3f5f5', border: '1px solid #eef2f3', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '13px', flexShrink: 0 }}>✉</span>
+              <span style={{ color: '#0e2328', fontSize: '14px', fontWeight: 500, wordBreak: 'break-all', overflowWrap: 'anywhere' }}>info@universalrealtyfarmandresort.com</span>
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-              <span style={{ width: '32px', height: '32px', background: '#f3f5f5', border: '1px solid #eef2f3', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '13px' }}>◉</span>
+              <span style={{ width: '32px', height: '32px', background: '#f3f5f5', border: '1px solid #eef2f3', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '13px', flexShrink: 0 }}>◉</span>
               <span style={{ color: '#0e2328', fontSize: '14px', fontWeight: 500 }}>Universal Realty Farm &amp; Resort (OPC) Pvt. Ltd., New Delhi, India</span>
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-              <span style={{ width: '32px', height: '32px', background: '#f3f5f5', border: '1px solid #eef2f3', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '13px' }}>☎</span>
+              <span style={{ width: '32px', height: '32px', background: '#f3f5f5', border: '1px solid #eef2f3', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '13px', flexShrink: 0 }}>☎</span>
               <span style={{ color: '#0e2328', fontSize: '14px', fontWeight: 500 }}>+91 98765 43210</span>
             </div>
           </div>
         </div>
-        <div style={{ background: '#f3f5f5', border: '1px solid #eef2f3', padding: '28px', borderRadius: '6px' }}>
+        <div style={{ background: '#f3f5f5', border: '1px solid #eef2f3', padding: '28px', borderRadius: '6px', width: '100%', maxWidth: '480px', justifySelf: 'center', boxSizing: 'border-box' }}>
           <form onSubmit={onSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
             <div>
               <label style={{ display: 'block', color: '#0e2328', fontSize: '13px', fontWeight: 600, marginBottom: '6px' }}>Full Name</label>
@@ -87,7 +87,13 @@ function Practitioners() {
       </div>
       <style>{`
         @media (max-width: 900px) {
-          #contact > div { grid-template-columns: 1fr !important; gap: 32px !important; }
+          #contact { padding: 40px 20px !important; }
+          #contact .contact-grid { grid-template-columns: 1fr !important; gap: 32px !important; justify-items: center !important; text-align: left; }
+          #contact .contact-grid > div:first-child { width: 100%; max-width: 480px; }
+          #contact .contact-grid > div:last-child { width: 100%; max-width: 480px; }
+        }
+        @media (max-width: 480px) {
+          #contact { padding: 32px 16px !important; }
         }
       `}</style>
     </section>

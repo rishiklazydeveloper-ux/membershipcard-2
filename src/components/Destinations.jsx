@@ -15,7 +15,7 @@ const GALLERY = [
 
 function Destinations() {
   return (
-    <section id="gallery" style={{ background: '#ffffff', padding: '80px 0 80px', overflow: 'hidden', maxWidth: '100vw' }}>
+    <section id="gallery" style={{ background: '#ffffff', padding: '80px 0 80px', overflow: 'hidden', maxWidth: '100%' }}>
       <div style={{ maxWidth: '1440px', margin: '0 auto', padding: '0 40px', boxSizing: 'border-box' }}>
         {/* Head */}
         <div className="dest-head" style={{ display: 'grid', gridTemplateColumns: '220px 1fr', gap: '40px', marginBottom: '48px' }}>

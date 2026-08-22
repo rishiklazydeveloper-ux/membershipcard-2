@@ -12,7 +12,6 @@ import Footer from './components/Footer'
 import NoticeBanner from './components/NoticeBanner'
 
 import { useEffect } from 'react'
-import Lenis from 'lenis'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 function HomePage() {
@@ -32,7 +31,7 @@ function HomePage() {
 
 function CareerPage() {
   return (
-    <main style={{ paddingTop: '95px' }}>
+    <main className="career-page" style={{ paddingTop: '95px' }}>
       <Career />
     </main>
   )
@@ -40,29 +39,17 @@ function CareerPage() {
 
 function App() {
   useEffect(() => {
-    const lenis = new Lenis({
-      duration: 1.15,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smoothWheel: true,
-      smoothTouch: false,
-      gestureOrientation: 'vertical',
-    })
-    let rafId
-    const raf = (time) => {
-      lenis.raf(time)
-      rafId = requestAnimationFrame(raf)
-    }
-    rafId = requestAnimationFrame(raf)
-
     const els = document.querySelectorAll('main section, footer')
     const hero = document.querySelector('main section:first-child')
     els.forEach((el, i) => {
-      if (el === hero) return
+      if (el === hero) {
+        el.classList.add('visible')
+        return
+      }
       el.classList.add('reveal')
       if (i % 3 === 1) el.classList.add('reveal-delay-1')
       if (i % 3 === 2) el.classList.add('reveal-delay-2')
     })
-    if (hero) hero.classList.add('visible')
     const toObserve = Array.from(els).filter((el) => el !== hero)
     const io = new IntersectionObserver(
       (entries) => {
@@ -73,9 +60,12 @@ function App() {
           }
         })
       },
-      { threshold: 0.12, rootMargin: '0px 0px -60px 0px' }
+      { threshold: 0.05, rootMargin: '0px 0px -40px 0px' }
     )
     toObserve.forEach((el) => io.observe(el))
+    const fallback = setTimeout(() => {
+      toObserve.forEach((el) => el.classList.add('visible'))
+    }, 600)
 
     const handler = (e) => {
       const a = e.target.closest('a[href^="#"]')
@@ -85,12 +75,13 @@ function App() {
       const target = document.querySelector(id)
       if (!target) return
       e.preventDefault()
-      lenis.scrollTo(target, { offset: -95, duration: 1.1 })
+      const offset = window.innerWidth <= 480 ? 64 : 95
+      const top = target.getBoundingClientRect().top + window.scrollY - offset
+      window.scrollTo({ top, behavior: 'smooth' })
     }
     document.addEventListener('click', handler)
     return () => {
-      cancelAnimationFrame(rafId)
-      lenis.destroy()
+      clearTimeout(fallback)
       io.disconnect()
       document.removeEventListener('click', handler)
     }
