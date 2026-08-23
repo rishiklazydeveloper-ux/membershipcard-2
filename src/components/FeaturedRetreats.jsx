@@ -31,36 +31,10 @@ function FeaturedRetreats() {
               minHeight: '340px',
             }}
           >
-            {/* Left content */}
+            {/* Left content - cleaned */}
             <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-              <div>
-                <div style={{ color: '#0e2328', fontSize: '20px', fontWeight: 700, lineHeight: 1.25, letterSpacing: '-0.01em', marginBottom: '8px' }}>
-                  {retreat.title}
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '28px' }}>
-                  <span style={{ color: '#6b7d82', fontSize: '13px', fontWeight: 500 }}>from</span>
-                  <span style={{ color: '#0e2328', fontSize: '14px', fontWeight: 700 }}>{retreat.price}</span>
-                </div>
-
-                {/* Properties with icons on right */}
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <span style={{ color: '#1a2e33', fontSize: '11px', fontWeight: 600 }}>{retreat.location}</span>
-                    <span style={{ color: '#a8b5b9', fontSize: '12px' }}>◎</span>
-                  </div>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <span style={{ color: '#1a2e33', fontSize: '11px', fontWeight: 600 }}>{retreat.date} <span style={{ color: '#6b7d82', fontWeight: 400 }}>{retreat.duration}</span></span>
-                    <span style={{ color: '#a8b5b9', fontSize: '12px' }}>▢</span>
-                  </div>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <span style={{ color: '#1a2e33', fontSize: '11px', fontWeight: 600 }}>{retreat.guests}</span>
-                    <span style={{ color: '#a8b5b9', fontSize: '12px' }}>◯</span>
-                  </div>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <span style={{ color: '#6b7d82', fontSize: '11px', fontWeight: 500 }}>Trusted by <span style={{ color: '#1a2e33', fontWeight: 600 }}>{retreat.trusted}</span> clients worldwide</span>
-                    <span style={{ color: '#fba13a', fontSize: '10px', letterSpacing: '1px' }}>★★★★★</span>
-                  </div>
-                </div>
+              <div style={{ color: '#0e2328', fontSize: '20px', fontWeight: 700, lineHeight: 1.25, letterSpacing: '-0.01em' }}>
+                {retreat.title}
               </div>
 
               <a href={retreat.link} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: '#0e2328', color: '#ffffff', fontSize: '12px', fontWeight: 600, padding: '12px 16px', borderRadius: '9999px', textDecoration: 'none', marginTop: '20px' }}>
