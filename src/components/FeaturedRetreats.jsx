@@ -37,7 +37,7 @@ function FeaturedRetreats() {
                 {retreat.title}
               </div>
 
-              <a href={retreat.link} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: '#0e2328', color: '#ffffff', fontSize: '12px', fontWeight: 600, padding: '12px 16px', borderRadius: '9999px', textDecoration: 'none', marginTop: '20px' }}>
+              <a href="/#contact" onClick={(e) => { const el = document.querySelector('#contact'); if (el && window.location.pathname === '/') { e.preventDefault(); window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 95, behavior: 'smooth' }) } }} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: '#0e2328', color: '#ffffff', fontSize: '12px', fontWeight: 600, padding: '12px 16px', borderRadius: '9999px', textDecoration: 'none', marginTop: '20px' }}>
                 Explore Retreat
                 <span style={{ width: '6px', height: '6px', background: '#fff', borderRadius: '50%', display: 'inline-block' }} />
               </a>

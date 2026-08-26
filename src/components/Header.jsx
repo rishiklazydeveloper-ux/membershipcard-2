@@ -94,13 +94,13 @@ export default function Header() {
         </Link>
         <div className="site-header__spacer" />
         <nav className="site-header__nav nav-desktop">
-          <Link to="/">Home</Link>
+          <a href="#top" onClick={(e) => { e.preventDefault(); if (location.pathname !== '/') { navigate('/'); setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 100) } else window.scrollTo({ top: 0, behavior: 'smooth' }) }} style={{ color: 'rgba(255,255,255,0.95)', fontSize: '15px', fontWeight: 500, textDecoration: 'none', whiteSpace: 'nowrap', cursor: 'pointer' }}>Home</a>
           <a href="#about" onClick={(e) => location.pathname !== '/' && (e.preventDefault(), go('#about'))}>About Us</a>
           <a href="#gallery" onClick={(e) => location.pathname !== '/' && (e.preventDefault(), go('#gallery'))}>Gallery</a>
           <a href="#contact" onClick={(e) => location.pathname !== '/' && (e.preventDefault(), go('#contact'))}>Contact Us</a>
           <Link to="/career">Career</Link>
         </nav>
-        <Link to="/career" className="site-header__explore nav-desktop">Explore</Link>
+        <a href="#contact" onClick={(e) => { if (location.pathname !== '/') { e.preventDefault(); go('#contact') } }} className="site-header__explore nav-desktop" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '0 22px', color: '#fff', fontSize: '15px', fontWeight: 600, textDecoration: 'none', whiteSpace: 'nowrap', flexShrink: 0, cursor: 'pointer' }}>Explore</a>
         <button className="nav-burger" aria-label="Toggle menu" onClick={() => setOpen(!open)}>
           {!open ? (
             <>
@@ -120,12 +120,12 @@ export default function Header() {
           onClick={() => setOpen(false)}
         >
           <div style={menuInnerStyle} onClick={(e) => e.stopPropagation()}>
-            <Link to="/" onClick={() => setOpen(false)} style={linkStyle}>Home</Link>
+            <a href="#top" onClick={(e) => { e.preventDefault(); setOpen(false); if (location.pathname !== '/') { navigate('/'); setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 100) } else window.scrollTo({ top: 0, behavior: 'smooth' }) }} style={linkStyle}>Home</a>
             <a href="#about" onClick={() => { setOpen(false); if (location.pathname !== '/') go('#about') }} style={linkStyle}>About Us</a>
             <a href="#gallery" onClick={() => { setOpen(false); if (location.pathname !== '/') go('#gallery') }} style={linkStyle}>Gallery</a>
             <a href="#contact" onClick={() => { setOpen(false); if (location.pathname !== '/') go('#contact') }} style={linkStyle}>Contact Us</a>
             <Link to="/career" onClick={() => setOpen(false)} style={linkStyle}>Career</Link>
-            <Link to="/career" onClick={() => setOpen(false)} style={ctaStyle}>Explore Retreats</Link>
+            <a href="#contact" onClick={(e) => { setOpen(false); if (location.pathname !== '/') { e.preventDefault(); go('#contact') } }} style={{ ...ctaStyle, cursor: 'pointer' }}>Explore Retreats</a>
           </div>
         </div>
       )}
