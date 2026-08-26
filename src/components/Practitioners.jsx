@@ -48,15 +48,15 @@ function Practitioners() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginTop: '48px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
               <span style={{ width: '32px', height: '32px', background: '#f3f5f5', border: '1px solid #eef2f3', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '13px', flexShrink: 0 }}>✉</span>
-              <span style={{ color: '#0e2328', fontSize: '14px', fontWeight: 500, wordBreak: 'break-all', overflowWrap: 'anywhere' }}>info@universalrealtyfarmandresort.com</span>
+              <span style={{ color: '#0e2328', fontSize: '14px', fontWeight: 500, wordBreak: 'break-all', overflowWrap: 'anywhere' }}>info@jaihouniversal.com</span>
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
               <span style={{ width: '32px', height: '32px', background: '#f3f5f5', border: '1px solid #eef2f3', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '13px', flexShrink: 0 }}>◉</span>
-              <span style={{ color: '#0e2328', fontSize: '14px', fontWeight: 500 }}>Universal Realty Farm &amp; Resort (OPC) Pvt. Ltd., New Delhi, India</span>
+              <span style={{ color: '#0e2328', fontSize: '14px', fontWeight: 500 }}>S-3 block 8 rasta chowk Laxmi Nagar Nagpur</span>
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
               <span style={{ width: '32px', height: '32px', background: '#f3f5f5', border: '1px solid #eef2f3', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '13px', flexShrink: 0 }}>☎</span>
-              <span style={{ color: '#0e2328', fontSize: '14px', fontWeight: 500 }}>+91 98765 43210</span>
+              <span style={{ color: '#0e2328', fontSize: '14px', fontWeight: 500 }}>+91 96657 73309</span>
             </div>
           </div>
         </div>
