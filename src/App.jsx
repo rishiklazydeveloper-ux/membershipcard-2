@@ -8,6 +8,8 @@ import Destinations from './components/Destinations'
 import HowWorks from './components/HowWorks'
 import Practitioners from './components/Practitioners'
 import Career from './components/Career'
+import Privacy from './components/Privacy'
+import Terms from './components/Terms'
 import Footer from './components/Footer'
 import NoticeBanner from './components/NoticeBanner'
 
@@ -94,6 +96,8 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/career" element={<CareerPage />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/terms" element={<Terms />} />
         </Routes>
         <Footer />
         <NoticeBanner />

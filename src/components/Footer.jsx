@@ -87,7 +87,11 @@ function Footer() {
         {/* Bottom thin line */}
         <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', marginTop: '24px', padding: '14px 0 20px', display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px' }}>
           <div style={{ color: 'rgba(255,255,255,0.45)', fontSize: '11px' }}>© 2026 Universal Realty Farm &amp; Resort (OPC) Pvt. Ltd. • Tap &amp; Pay Card ₹51,000 / year</div>
-          <div style={{ color: 'rgba(255,255,255,0.45)', fontSize: '11px' }}>Privacy • Terms • Support</div>
+          <div style={{ color: 'rgba(255,255,255,0.45)', fontSize: '11px', display: 'flex', gap: '12px' }}>
+            <Link to="/privacy" style={{ color: 'rgba(255,255,255,0.65)', textDecoration: 'none' }}>Privacy</Link> •
+            <Link to="/terms" style={{ color: 'rgba(255,255,255,0.65)', textDecoration: 'none' }}> Terms</Link> •
+            <a href="/#contact" style={{ color: 'rgba(255,255,255,0.65)', textDecoration: 'none' }}>Support</a>
+          </div>
         </div>
       </div>
 
