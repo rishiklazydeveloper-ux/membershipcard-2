@@ -13,7 +13,7 @@ export default function PrivacyPolicy() {
         <div style={{ marginTop: '32px', color: '#1a2e33', fontSize: '13px', lineHeight: 1.8, display: 'flex', flexDirection: 'column', gap: '28px' }}>
           <section>
             <h2 style={{ color: '#0e2328', fontSize: '16px', fontWeight: 700, marginBottom: '8px' }}>1. Introduction</h2>
-            <p>This Privacy Policy describes how Universal Realty Farm &amp; Resort (OPC) Pvt. Ltd. (“Company”, “we”, “us”, “our”) collects, uses, discloses and safeguards your information when you visit our website, purchase our ₹51,000 Tap &amp; Pay Membership Card, and use our partner venues (villas, farms, theme parks, water parks, resorts, dine-out). By accessing the Site or making a payment via Razorpay, you consent to this Policy.</p>
+            <p>This Privacy Policy describes how Universal Realty Farm &amp; Resort (OPC) Pvt. Ltd. (“Company”, “we”, “us”, “our”) collects, uses, discloses and safeguards your information when you visit our website, purchase our ₹11,000 Tap &amp; Pay Membership Card, and use our partner venues (villas, farms, theme parks, water parks, resorts, dine-out). By accessing the Site or making a payment via Razorpay, you consent to this Policy.</p>
           </section>
           <section>
             <h2 style={{ color: '#0e2328', fontSize: '16px', fontWeight: 700, marginBottom: '8px' }}>2. Information We Collect</h2>

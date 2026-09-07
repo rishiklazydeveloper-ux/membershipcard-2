@@ -12,12 +12,12 @@ export default function TermsConditions() {
         <div style={{ marginTop: '32px', color: '#1a2e33', fontSize: '13px', lineHeight: 1.8, display: 'flex', flexDirection: 'column', gap: '28px' }}>
           <section>
             <h2 style={{ color: '#0e2328', fontSize: '16px', fontWeight: 700, marginBottom: '8px' }}>1. Acceptance</h2>
-            <p>By accessing the website, purchasing the Tap &amp; Pay Membership Card (₹51,000), or attending the Job Camp (Entry Fee ₹999 on 30 September 2026 at Dr. Babasaheb Ambedkar International Convention Centre, Nagpur), you agree to these Terms, our Privacy Policy, Refund Policy and all applicable laws (India). If you do not agree, do not use the Site.</p>
+            <p>By accessing the website, purchasing the Tap &amp; Pay Membership Card (₹11,000), or attending the Job Camp (Entry Fee ₹999 on 30 September 2026 at Dr. Babasaheb Ambedkar International Convention Centre, Nagpur), you agree to these Terms, our Privacy Policy, Refund Policy and all applicable laws (India). If you do not agree, do not use the Site.</p>
           </section>
           <section>
             <h2 style={{ color: '#0e2328', fontSize: '16px', fontWeight: 700, marginBottom: '8px' }}>2. Membership — Fees, Validity &amp; Usage</h2>
             <ul style={{ paddingLeft: '18px', display: 'flex', flexDirection: 'column', gap: '6px' }}>
-              <li><strong>Fee:</strong> ₹51,000 (inclusive of taxes, non-refundable after activation except as per Refund Policy) processed securely via <strong>Razorpay</strong>. We do not store card/UPI data.</li>
+              <li><strong>Fee:</strong> ₹11,000 (inclusive of taxes, non-refundable after activation except as per Refund Policy) processed securely via <strong>Razorpay</strong>. We do not store card/UPI data.</li>
               <li><strong>Validity:</strong> 365 days from activation. Unlimited taps at 500+ partner venues: villas, farms, theme parks, water parks, resorts, dine-out. Bring family/friends as per venue group limit.</li>
               <li><strong>Usage:</strong> Tap physical card at gate. No cash at venue. Misuse, resale, duplication or tampering leads to blocking without refund.</li>
               <li><strong>Venue Rules:</strong> Each partner’s house rules, capacity, blackout dates and ID verification apply.</li>
@@ -46,7 +46,7 @@ export default function TermsConditions() {
           </section>
           <section>
             <h2 style={{ color: '#0e2328', fontSize: '16px', fontWeight: 700, marginBottom: '8px' }}>7. Limitation of Liability</h2>
-            <p>Services provided “as is”. Company not liable for venue unavailability, force majeure, or indirect damages. Total liability capped at fees paid (₹51,000 or ₹999 as applicable).</p>
+            <p>Services provided “as is”. Company not liable for venue unavailability, force majeure, or indirect damages. Total liability capped at fees paid (₹11,000 or ₹999 as applicable).</p>
           </section>
           <section>
             <h2 style={{ color: '#0e2328', fontSize: '16px', fontWeight: 700, marginBottom: '8px' }}>8. Termination</h2>

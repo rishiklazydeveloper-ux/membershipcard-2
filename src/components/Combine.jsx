@@ -1,4 +1,4 @@
-import bgImage from '../assets/image7.PNG'
+const bgImage = 'https://images.unsplash.com/photo-1499678329028-101435549a4e?w=1920&auto=format&fit=crop&q=80'
 
 function Combine() {
   return (

@@ -1,16 +1,25 @@
-import { IMAGES } from '../data/content'
+import image1 from '../assets/image1.png'
+import image2 from '../assets/image2.PNG'
+import image3 from '../assets/image3.PNG'
+import image4 from '../assets/image4.PNG'
+import image5 from '../assets/image5].PNG'
+import image6 from '../assets/image6.PNG'
+import image7 from '../assets/image7.PNG'
+import image8 from '../assets/image8.PNG'
+import image9 from '../assets/image9.PNG'
+import image10 from '../assets/image10.PNG'
 
 const GALLERY = [
-  { src: IMAGES.retreat1, tall: true },
-  { src: IMAGES.retreat2, tall: false },
-  { src: IMAGES.retreat3, tall: false },
-  { src: IMAGES.retreat4, tall: true },
-  { src: IMAGES.retreat5, tall: false },
-  { src: IMAGES.retreat6, tall: true },
-  { src: IMAGES.retreat7, tall: false },
-  { src: IMAGES.retreat8, tall: false },
-  { src: IMAGES.retreat9, tall: true },
-  { src: IMAGES.retreat10, tall: false },
+  { src: image1, tall: true },
+  { src: image2, tall: false },
+  { src: image3, tall: false },
+  { src: image4, tall: true },
+  { src: image5, tall: false },
+  { src: image6, tall: true },
+  { src: image7, tall: false },
+  { src: image8, tall: false },
+  { src: image9, tall: true },
+  { src: image10, tall: false },
 ]
 
 function Destinations() {

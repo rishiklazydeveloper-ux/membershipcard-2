@@ -43,7 +43,7 @@ function Practitioners() {
             Talk to our<br />membership team
           </div>
           <div style={{ color: '#6b7d82', fontSize: '15px', lineHeight: 1.6, marginTop: '14px', maxWidth: '420px' }}>
-            Universal Realty Farm &amp; Resort (OPC) Pvt. Ltd. — reach out for membership details, farm &amp; resort access or any questions about your ₹51,000 tap &amp; pay card.
+            Universal Realty Farm &amp; Resort (OPC) Pvt. Ltd. — reach out for membership details, farm &amp; resort access or any questions about your ₹11,000 tap &amp; pay card.
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginTop: '48px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>

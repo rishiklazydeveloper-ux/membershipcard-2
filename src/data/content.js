@@ -24,10 +24,10 @@ export const IMAGES = {
   // Logo mini
   logoMini: logoImg,
 
-  // Statistics illustrations
-  statistic1: image1,
-  statistic2: image2,
-  statistic3: image3,
+  // Statistics illustrations - Waterpark, Hotel, Resort (Unsplash) — checked hotel now bedroom
+  statistic1: 'https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=800&auto=format&fit=crop&q=80',
+  statistic2: 'https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=800&auto=format&fit=crop&q=80',
+  statistic3: 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&auto=format&fit=crop&q=80',
 
   // About
   aboutIllustration: card,
@@ -35,13 +35,13 @@ export const IMAGES = {
   aboutLogo2: logoImg,
   aboutLogo3: logoImg,
 
-  // Featured experiences (retreats)
-  retreat1: image1,
-  retreat2: image2,
-  retreat3: image3,
-  retreat4: image4,
-  retreat5: image5,
-  retreat6: image6,
+  // Featured experiences (retreats) — Unsplash content-matched (verified)
+  retreat1: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&auto=format&fit=crop&q=80',
+  retreat2: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&auto=format&fit=crop&q=80',
+  retreat3: 'https://images.unsplash.com/photo-1488085061387-422e29b40080?w=800&auto=format&fit=crop&q=80',
+  retreat4: 'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=800&auto=format&fit=crop&q=80',
+  retreat5: 'https://images.unsplash.com/photo-1523906834658-6e24ef2386ea?w=800&auto=format&fit=crop&q=80',
+  retreat6: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800&auto=format&fit=crop&q=80',
   retreat7: image7,
   retreat8: image8,
   retreat9: image9,
@@ -79,17 +79,23 @@ export const IMAGES = {
 
 export const STATISTICS = [
   {
-    title: 'Raw-House',
+    title: 'Waterpark',
+    subtitle: '5 Person • Food Included • No Night Stay',
+    detail: 'Tap for details',
     image: IMAGES.statistic1,
     hasRightBorder: true,
   },
   {
-    title: 'Night Out',
+    title: 'Hotel',
+    subtitle: '4 Person • Food Included with Stay',
+    detail: 'Tap for details',
     image: IMAGES.statistic2,
     hasRightBorder: true,
   },
   {
-    title: 'Park',
+    title: 'Resort',
+    subtitle: '4 Person • Food Included • No Night Stay',
+    detail: 'Tap for details',
     image: IMAGES.statistic3,
     hasRightBorder: false,
   },
@@ -107,7 +113,7 @@ export const RETREATS = [
     price: '$1,000',
     image: IMAGES.retreat1,
     link: '#retreats',
-    location: 'Gura Humorului, Romania',
+    location: 'Nagpur, Maharashtra',
     date: 'Feb 15 - 21, 2026',
     duration: '(7 days, 6 nights)',
     guests: '12 guests',
@@ -118,7 +124,7 @@ export const RETREATS = [
     price: '$1,328',
     image: IMAGES.retreat2,
     link: '#retreats',
-    location: 'Province of Grosseto, Tuscany, Italy',
+    location: 'Nagpur, Maharashtra',
     date: 'Jan 15 - 21, 2026',
     duration: '(7 days, 6 nights)',
     guests: '6 guests',
@@ -129,7 +135,7 @@ export const RETREATS = [
     price: '$5,575',
     image: IMAGES.retreat3,
     link: '#retreats',
-    location: 'Morocco',
+    location: 'Nagpur, Maharashtra',
     date: 'March 06 - 20, 2026',
     duration: '(15 days, 14 nights)',
     guests: '18 guests',
@@ -140,7 +146,7 @@ export const RETREATS = [
     price: '$3,829',
     image: IMAGES.retreat4,
     link: '#retreats',
-    location: 'Marrakesh, Marrakesh-Safi, Morocco',
+    location: 'Nagpur, Maharashtra',
     date: 'April 12 - 20, 2026',
     duration: '(8 days, 7 nights)',
     guests: '6 guests',
@@ -151,7 +157,7 @@ export const RETREATS = [
     price: '$1,294',
     image: IMAGES.retreat5,
     link: '#retreats',
-    location: 'Portugal',
+    location: 'Nagpur, Maharashtra',
     date: 'Feb 06 - 14, 2026',
     duration: '(8 days, 7 nights)',
     guests: '12 guests',
@@ -162,7 +168,7 @@ export const RETREATS = [
     price: '$406',
     image: IMAGES.retreat6,
     link: '#retreats',
-    location: 'Ubud, Bali, Indonesia',
+    location: 'Nagpur, Maharashtra',
     date: 'Jan | Feb | Mar | Apr | May',
     duration: '(7 days, 6 nights)',
     guests: 'Solo',
@@ -256,7 +262,7 @@ export const COACHES = [
   {
     name: 'Lauren Thompson',
     role: 'Yoga Couch',
-    location: 'USA',
+    location: 'Nagpur, Maharashtra',
     image: IMAGES.coach1,
     countries: '14',
     retreats: '18',
@@ -266,7 +272,7 @@ export const COACHES = [
   {
     name: 'Michael Wilson',
     role: 'Meditation Coach',
-    location: 'Europe',
+    location: 'Nagpur, Maharashtra',
     image: IMAGES.coach2,
     countries: '19',
     retreats: '56',
@@ -276,7 +282,7 @@ export const COACHES = [
   {
     name: 'Sarah Johnson',
     role: 'Nutrition Specialist',
-    location: 'Europe',
+    location: 'Nagpur, Maharashtra',
     image: IMAGES.coach3,
     countries: '17',
     retreats: '89',
@@ -286,7 +292,7 @@ export const COACHES = [
   {
     name: 'Isabelle Martin',
     role: 'Stress-Relief Guide',
-    location: 'Europe',
+    location: 'Nagpur, Maharashtra',
     image: IMAGES.coach4,
     countries: '14',
     retreats: '18',

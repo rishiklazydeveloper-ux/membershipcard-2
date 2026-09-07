@@ -1,4 +1,4 @@
-import bgImage from '../assets/image7.PNG'
+const bgImage = 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1920&auto=format&fit=crop&q=80'
 import { Link } from 'react-router-dom'
 
 function Footer() {
@@ -84,9 +84,21 @@ function Footer() {
           </div>
         </div>
 
+        {/* Contact - Email & Mobile */}
+        <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', marginTop: '24px', padding: '16px 0 12px', display: 'flex', justifyContent: 'center', gap: '24px', flexWrap: 'wrap' }}>
+          <a href="mailto:info@universalrealtyfarmandresort.com" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '13px', fontWeight: 500, textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <span style={{ width: '28px', height: '28px', borderRadius: '9999px', background: 'rgba(255,255,255,0.12)', border: '1px solid rgba(255,255,255,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '12px' }}>✉</span>
+            info@universalrealtyfarmandresort.com
+          </a>
+          <a href="tel:+919876543210" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '13px', fontWeight: 500, textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <span style={{ width: '28px', height: '28px', borderRadius: '9999px', background: 'rgba(255,255,255,0.12)', border: '1px solid rgba(255,255,255,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '12px' }}>☎</span>
+            +91 98765 43210
+          </a>
+        </div>
+
         {/* Bottom thin line */}
-        <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', marginTop: '24px', padding: '14px 0 20px', display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px' }}>
-          <div style={{ color: 'rgba(255,255,255,0.45)', fontSize: '11px' }}>© 2026 Universal Realty Farm &amp; Resort (OPC) Pvt. Ltd. • Tap &amp; Pay Card ₹51,000 / year</div>
+        <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', padding: '14px 0 20px', display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px' }}>
+          <div style={{ color: 'rgba(255,255,255,0.45)', fontSize: '11px' }}>© 2026 Universal Realty Farm &amp; Resort (OPC) Pvt. Ltd. • Tap &amp; Pay Card ₹11,000 / year</div>
           <div style={{ color: 'rgba(255,255,255,0.45)', fontSize: '11px', display: 'flex', gap: '12px' }}>
             <Link to="/privacy" style={{ color: 'rgba(255,255,255,0.65)', textDecoration: 'none' }}>Privacy</Link> •
             <Link to="/terms" style={{ color: 'rgba(255,255,255,0.65)', textDecoration: 'none' }}> Terms</Link> •
