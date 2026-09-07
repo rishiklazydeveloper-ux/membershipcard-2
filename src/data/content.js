@@ -40,7 +40,7 @@ export const IMAGES = {
   retreat2: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&auto=format&fit=crop&q=80',
   retreat3: 'https://images.unsplash.com/photo-1488085061387-422e29b40080?w=800&auto=format&fit=crop&q=80',
   retreat4: 'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=800&auto=format&fit=crop&q=80',
-  retreat5: 'https://images.unsplash.com/photo-1523906834658-6e24ef2386ea?w=800&auto=format&fit=crop&q=80',
+  retreat5: 'https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=800&auto=format&fit=crop&q=80',
   retreat6: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800&auto=format&fit=crop&q=80',
   retreat7: image7,
   retreat8: image8,

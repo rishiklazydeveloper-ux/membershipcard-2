@@ -205,7 +205,7 @@ function Statistics() {
                 <button type="submit" disabled={loading} style={{ flex: 1, background: '#0e2328', color: '#fff', fontSize: '13px', fontWeight: 600, padding: '12px', borderRadius: '9999px', border: 'none', cursor: loading ? 'not-allowed' : 'pointer', opacity: loading ? 0.7 : 1 }}>{loading ? 'Processing...' : 'Proceed to Pay ₹11,000 →'}</button>
                 <button type="button" onClick={() => setActive(null)} style={{ background: '#f3f5f5', border: '1px solid #dde3e5', color: '#0e2328', fontSize: '13px', fontWeight: 600, padding: '12px 18px', borderRadius: '9999px', cursor: 'pointer' }}>Cancel</button>
               </div>
-              <div style={{ gridColumn: 'span 2', fontSize: '10px', color: '#8a9ba0', textAlign: 'center', lineHeight: 1.5 }}>On payment success, your data + token are saved to Supabase and a confirmation email with token is sent via Resend to your email.</div>
+              <div style={{ gridColumn: 'span 2', fontSize: '10px', color: '#8a9ba0', textAlign: 'center', lineHeight: 1.5 }}>After payment, you will receive a unique token number on your email.</div>
             </form>
           </div>
         </div>
