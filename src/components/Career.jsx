@@ -10,16 +10,6 @@ function Career() {
     const { name, value, files } = e.target
     setForm((p) => ({ ...p, [name]: files ? files[0] : value }))
   }
-  const loadRazorpay = () =>
-    new Promise((resolve, reject) => {
-      if (window.Razorpay) return resolve(true)
-      const s = document.createElement('script')
-      s.src = 'https://checkout.razorpay.com/v1/checkout.js'
-      s.onload = () => resolve(true)
-      s.onerror = () => reject(new Error('Failed to load Razorpay'))
-      document.body.appendChild(s)
-    })
-
   const onSubmit = async (e) => {
     e.preventDefault()
     if (!form.name || !form.mobile || !form.gender || !form.email || !form.qualification || !form.resume) {
@@ -29,120 +19,33 @@ function Career() {
     setLoading(true)
     setStatus(null)
     try {
-      // Step 1: Create order (₹999 = 99900 paise) — try backend, fallback to client mock
-      let orderData
-      try {
-        const orderRes = await fetch('/api/create-order', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ amount: 99900 }),
-        })
-        const text = await orderRes.text()
-        orderData = JSON.parse(text)
-        if (!orderRes.ok) throw new Error(orderData.error || 'Failed to create order')
-      } catch (e) {
-        // Fallback: no backend on localhost:5173 — use direct amount
-        orderData = {
-          order_id: null,
-          amount: 99900,
-          currency: 'INR',
-          key_id: import.meta.env.VITE_RAZORPAY_KEY_ID,
-        }
-      }
-      await loadRazorpay()
+      let resumeUrl = null
+      let resumeName = form.resume.name
+      const fileName = `${Date.now()}_${resumeName.replace(/\s/g, '_')}`
+      const { error: upErr } = await supabase.storage.from('resumes').upload(fileName, form.resume)
+      if (upErr) throw upErr
+      resumeUrl = fileName
 
-      const keyId = orderData.key_id || import.meta.env.VITE_RAZORPAY_KEY_ID
-      if (!keyId) throw new Error('Razorpay Key missing — set VITE_RAZORPAY_KEY_ID in .env')
-
-      // Step 2: Open checkout
-      await new Promise((resolve, reject) => {
-        const options = {
-          key: keyId,
-          amount: orderData.amount || 99900,
-          currency: orderData.currency || 'INR',
-          name: 'Universal Realty Farm & Resort (OPC) Pvt. Ltd.',
-          description: 'Career Application Fee — ₹999',
-          ...(orderData.order_id ? { order_id: orderData.order_id } : {}),
-          prefill: { name: form.name, email: form.email, contact: form.mobile },
-          theme: { color: '#0e2328' },
-          handler: async function (resp) {
-            try {
-              // Step 3: Verify signature — try backend, fallback to success (no backend on dev)
-              try {
-                const verifyRes = await fetch('/api/verify-payment', {
-                  method: 'POST',
-                  headers: { 'Content-Type': 'application/json' },
-                  body: JSON.stringify({
-                    razorpay_order_id: resp.razorpay_order_id,
-                    razorpay_payment_id: resp.razorpay_payment_id,
-                    razorpay_signature: resp.razorpay_signature,
-                  }),
-                })
-                const text = await verifyRes.text()
-                const verifyData = text ? JSON.parse(text) : { success: true }
-                if (!verifyRes.ok || (verifyData.success === false)) throw new Error(verifyData.error || 'Payment verification failed')
-              } catch (verifyErr) {
-                // No backend — treat as verified for demo (log warning)
-                console.warn('Verify skipped (no backend):', verifyErr.message)
-              }
-
-              // Only after verified, upload resume and insert
-              let resumeUrl = null
-              let resumeName = form.resume.name
-              const fileName = `${Date.now()}_${resumeName.replace(/\s/g, '_')}`
-              const { error: upErr } = await supabase.storage.from('resumes').upload(fileName, form.resume)
-              if (upErr) throw upErr
-              resumeUrl = fileName
-
-              const payload = {
-                name: form.name,
-                mobile: form.mobile,
-                gender: form.gender,
-                email: form.email,
-                qualification: form.qualification,
-                summary: form.summary || null,
-                resume_url: resumeUrl,
-                resume_name: resumeName,
-              }
-              // Try with payment fields if columns exist
-              let insertPayload = { ...payload, is_paid: true, razorpay_order_id: resp.razorpay_order_id, razorpay_payment_id: resp.razorpay_payment_id, amount: 999 }
-              let { error } = await supabase.from('career_applications').insert(insertPayload)
-              if (error && error.code === 'PGRST204') {
-                const retry = await supabase.from('career_applications').insert(payload)
-                if (retry.error) throw retry.error
-              } else if (error) throw error
-
-              setStatus({ type: 'success', msg: 'Your form have been submitted, we will connect with you as soon as possible.' })
-              setTimeout(() => {
-                setShowModal(false)
-                setForm({ name: '', mobile: '', gender: '', email: '', qualification: '', summary: '', resume: null })
-                setStatus(null)
-              }, 1800)
-              resolve()
-            } catch (err) {
-              setStatus({ type: 'error', msg: err.message })
-              reject(err)
-            }
-          },
-          modal: {
-            ondismiss: function () {
-              setStatus({ type: 'error', msg: 'Payment cancelled — application not submitted. No resume saved.' })
-              setLoading(false)
-              reject(new Error('Payment cancelled'))
-            },
-          },
-        }
-        const rzp = new window.Razorpay(options)
-        rzp.on('payment.failed', function (resp) {
-          setStatus({ type: 'error', msg: resp.error?.description || 'Payment failed — try again' })
-          reject(new Error('Payment failed'))
-        })
-        rzp.open()
+      const { error } = await supabase.from('career_applications').insert({
+        name: form.name,
+        mobile: form.mobile,
+        gender: form.gender,
+        email: form.email,
+        qualification: form.qualification,
+        summary: form.summary || null,
+        resume_url: resumeUrl,
+        resume_name: resumeName,
       })
+      if (error) throw error
+
+      setStatus({ type: 'success', msg: 'Your form has been submitted, we will connect with you as soon as possible.' })
+      setTimeout(() => {
+        setShowModal(false)
+        setForm({ name: '', mobile: '', gender: '', email: '', qualification: '', summary: '', resume: null })
+        setStatus(null)
+      }, 1800)
     } catch (err) {
-      if (err.message !== 'Payment cancelled' && err.message !== 'Payment failed') {
-        setStatus({ type: 'error', msg: err.message })
-      }
+      setStatus({ type: 'error', msg: err.message })
     } finally {
       setLoading(false)
     }
@@ -263,8 +166,8 @@ function Career() {
                 <div style={{ color: '#fff', fontSize: '13px', fontWeight: 500, marginTop: '4px', lineHeight: 1.4 }}>Dr. Babasaheb Ambedkar International Convention Centre, Nagpur</div>
               </div>
             </div>
-            <div style={{ marginTop: '20px', display: 'inline-flex', alignItems: 'center', gap: '10px', background: '#fba13a', color: '#0e2328', fontSize: '13px', fontWeight: 700, padding: '10px 18px', borderRadius: '9999px' }}>
-              Entry Fee: ₹999
+            <div style={{ marginTop: '20px', display: 'inline-flex', alignItems: 'center', gap: '10px', background: '#e6f4ea', color: '#137333', fontSize: '13px', fontWeight: 700, padding: '10px 18px', borderRadius: '9999px', border: '1px solid #b7e1c3' }}>
+              Free Entry — No Fee
             </div>
           </div>
           <div style={{ background: '#fff7ec', border: '1px solid #fde2b8', borderRadius: '16px', padding: '28px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
